@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ShoppingCart.Models.ViewModels.Pages.PageVM>
+
+@{
+    ViewBag.Title = "Pages";
+}
+
+<h2>Pages</h2>
+
+<p>
+    @Html.ActionLink("Add New", "AddPage")
+</p>
+@if (!Model.Any())
+{
+    <h3 class="alert alert-danger text-center" role="alert">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        There are no pages to display!
+    </h3>
+}
+else
+{
+    if (TempData["msg"] != null)
+    {
+        <h3 class="alert alert-success text-center">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            @TempData["msg"]
+        </h3>
+    }
+    <table class="table table-striped table-hover table-bordered sorting" id="pages">
+        <tr class="home">
+            <th>
+                Title
+            </th>
+            <th>
+                Slug
+            </th>
+            <th>
+                Sidebar
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr id="id_@item.Id" class="@item.Slink">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Slink)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HasSidebar)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditPage", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "PageDetails", new { id = item.Id }) |
+                    @if (item.Slink != "home")
+                    {
+                        @Html.ActionLink("Delete", "DeletePage", new { id = item.Id }, new { @class = "delete" })
+                    }
+
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+@section Scripts{
+
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js">/*JQuery UI CDN */</script>
+    <script>
+
+        $(function () {
+
+            /*
+            * confirm page deletion
+            */
+            $("a.delete").click(function () {
+                if (!confirm("Do you want to delete this page?")) {
+                    return false;
+                }
+            });
+            /* ************************************** */
+
+            /*
+            * sorting pages
+            */
+            $("table#pages tbody").sortable({
+                items: "tr:not(.home)",
+                placeholder: "ui-state-highlight",
+                update: function () {
+                    var ids = $(".table#pages tbody").sortable("serialize");
+                    var url = "/admin/pages/SortPages";
+
+                    $.post(url, ids, function (data) {
+
+                    });
+                }
+            });
+            /* ******************************************* */
+
+        });
+    </script>
+
+}

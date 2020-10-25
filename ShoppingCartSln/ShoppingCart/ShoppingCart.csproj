@@ -129,11 +129,28 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010241843350_InitialModels.cs" />
+    <Compile Include="Migrations\202010241843350_InitialModels.designer.cs">
+      <DependentUpon>202010241843350_InitialModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010241847220_AddAnnotationsToPages.cs" />
+    <Compile Include="Migrations\202010241847220_AddAnnotationsToPages.designer.cs">
+      <DependentUpon>202010241847220_AddAnnotationsToPages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010242125036_AddHomeToPages.cs" />
+    <Compile Include="Migrations\202010242125036_AddHomeToPages.designer.cs">
+      <DependentUpon>202010242125036_AddHomeToPages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Contexts\CartDb.cs" />
+    <Compile Include="Models\DataModels\Page.cs" />
+    <Compile Include="Models\SupperModels\NTPage.cs" />
+    <Compile Include="Models\ViewModels\Pages\PageVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +172,10 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\AddPage.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\EditPage.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\PageDetails.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -183,8 +204,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Models\DataModels\" />
-    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -198,6 +217,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202010241843350_InitialModels.resx">
+      <DependentUpon>202010241843350_InitialModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010241847220_AddAnnotationsToPages.resx">
+      <DependentUpon>202010241847220_AddAnnotationsToPages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010242125036_AddHomeToPages.resx">
+      <DependentUpon>202010242125036_AddHomeToPages.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

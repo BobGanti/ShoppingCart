@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoppingCart.Models.DataModels;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace ShoppingCart.Models.Contexts
         public CartDb() : base("CartDb")
         { }
 
+        public DbSet<Page> Pages { get; set; }
 
     }
 }

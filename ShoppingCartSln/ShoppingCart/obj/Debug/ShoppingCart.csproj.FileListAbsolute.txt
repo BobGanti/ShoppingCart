@@ -81,3 +81,7 @@ C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\De
 C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.dll
 C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.pdb
+C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.Migrations.InitialModels.resources
+C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.Migrations.AddAnnotationsToPages.resources
+C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.Migrations.AddHomeToPages.resources
