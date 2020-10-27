@@ -1,6 +1,7 @@
 ﻿using ShoppingCart.Models.Contexts;
 using ShoppingCart.Models.DataModels;
 using ShoppingCart.Models.ViewModels.Pages;
+using ShoppingCart.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -47,12 +48,8 @@ namespace ShoppingCart.Areas.Admin.Controllers
                 return View(model);
             }
 
-            Page page = new Page();
-
-            page.Title = model.Title;
-
             //check for slink and format it
-            model.Slink = FormatSlink(model.Slink, model.Title);
+            model.Slink = CheckOrFormat.FormatSlink(model.Slink, model.Title);
 
             //check that title and slink are unique
             if (db.Pages.Any(p => p.Title.Equals(model.Title)) || db.Pages.Any(p => p.Slink.Equals(model.Slink)))
@@ -61,18 +58,21 @@ namespace ShoppingCart.Areas.Admin.Controllers
                 return View(model);
             }
 
-            page.Slink = model.Slink;
-            page.HasSidebar = model.HasSidebar;
-            page.Sorting = 100;
-            page.Body = model.Body;
-            
+            Page page = new Page()
+            {
+                Title = model.Title,
+                Slink = model.Slink,
+                HasSidebar = model.HasSidebar,
+                Sorting = 100,
+                Body = model.Body
+            };
+                   
             db.Pages.Add((page));
             db.SaveChanges();
 
             TempData["msg"] = "The " + model.Title + " page has been added successfully!";
 
             return RedirectToAction("AddPage");
-
         }
 
         // GET: Admin/Pages/EditPage/1
@@ -96,7 +96,7 @@ namespace ShoppingCart.Areas.Admin.Controllers
             return View(model);
         }
 
-        // POST: admin/editpage/1
+        // POST: Admin/Pages/EditPage/1
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EditPage(PageVM model)
@@ -106,17 +106,10 @@ namespace ShoppingCart.Areas.Admin.Controllers
                 return View(model);
             }
 
-            //declare slug
-            string slug = model.Slink;
-
-            Page page = db.Pages.SingleOrDefault(p => p.Id == model.Id);
-
-            page.Title = model.Title;
-
             //check for slink and format it
             if (model.Slink != "home")
             {
-                model.Slink = FormatSlink(model.Slink, model.Title);
+                model.Slink = CheckOrFormat.FormatSlink(model.Slink, model.Title);
             }
 
             //check that title and slink are unique
@@ -127,6 +120,9 @@ namespace ShoppingCart.Areas.Admin.Controllers
                 return View(model);
             }
 
+            Page page = db.Pages.SingleOrDefault(p => p.Id == model.Id);
+
+            page.Title = model.Title;
             page.Slink = model.Slink;
             page.Body = model.Body;
             page.HasSidebar = model.HasSidebar;
@@ -143,7 +139,7 @@ namespace ShoppingCart.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return Content("Bad Request");
+                return View("~/Views/Shared/Error.cshtml");
             }
 
             Page page = db.Pages.SingleOrDefault(p => p.Id == id);
@@ -181,18 +177,45 @@ namespace ShoppingCart.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        static string FormatSlink(string slink, string title)
+
+        // POST: admin/reorderpages/
+        [HttpPost]
+        public void ReorderPages(int[] id)
         {
-            //check for slink and format it
-            if (string.IsNullOrWhiteSpace(slink))
+            int count = 1;
+            Page page;
+
+            // set sorting for each page
+            foreach (var pageId in id)
             {
-                slink = title.Replace(" ", "-").ToLower();
+                page = db.Pages.Find(pageId);
+                page.Sorting = count;
+                db.SaveChanges();
+                count++;
             }
-            else
-            {
-                slink = slink.Replace(" ", "-").ToLower();
-            }
-            return slink;
         }
+
+        // GET: admin/editsidebar
+        public ActionResult EditSidebar()
+        {
+            Sidebar sidebar = db.Sidebars.Find(1);
+            SidebarVM model = new SidebarVM(sidebar);
+
+            return View(model);
+        }
+
+        // POST: admin/editsidebar
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditSidebar(SidebarVM model)
+        {
+            Sidebar sidebar = db.Sidebars.Find(1);
+            sidebar.Body = model.Body;
+            db.SaveChanges();
+            TempData["msg"] = "The sidebar has been edited successfully!";
+
+            return RedirectToAction("EditSidebar");
+        }
+
     }
 }

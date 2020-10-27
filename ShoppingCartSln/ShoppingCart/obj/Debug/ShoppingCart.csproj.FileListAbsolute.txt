@@ -85,3 +85,5 @@ C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\De
 C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.csproj.GenerateResource.cache
 C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.Migrations.AddAnnotationsToPages.resources
 C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.Migrations.AddHomeToPages.resources
+C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.Migrations.AddSidebars.resources
+C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.Migrations.PopulateSidebar.resources

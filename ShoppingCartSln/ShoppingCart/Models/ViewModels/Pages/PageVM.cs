@@ -1,5 +1,7 @@
 ﻿using ShoppingCart.Models.DataModels;
 using ShoppingCart.Models.SupperModels;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace ShoppingCart.Models.ViewModels.Pages
 {
@@ -17,5 +19,10 @@ namespace ShoppingCart.Models.ViewModels.Pages
             HasSidebar = page.HasSidebar;
             Body = page.Body;
         }
+
+        [Required]
+        [AllowHtml]
+        [StringLength(int.MaxValue)]
+        public string Body { get; set; }
     }
 }

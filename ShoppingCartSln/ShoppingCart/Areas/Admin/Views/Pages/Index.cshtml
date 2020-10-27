@@ -53,10 +53,10 @@ else
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "EditPage", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "PageDetails", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "PageDetails", new { id = item.Id }) 
                     @if (item.Slink != "home")
                     {
-                        @Html.ActionLink("Delete", "DeletePage", new { id = item.Id }, new { @class = "delete" })
+                        @Html.ActionLink("| Delete", "DeletePage", new { id = item.Id }, new { @class = "delete" })
                     }
 
                 </td>
@@ -90,7 +90,7 @@ else
                 placeholder: "ui-state-highlight",
                 update: function () {
                     var ids = $(".table#pages tbody").sortable("serialize");
-                    var url = "/admin/pages/SortPages";
+                    var url = "/admin/pages/reorderpages";
 
                     $.post(url, ids, function (data) {
 
@@ -98,8 +98,6 @@ else
                 }
             });
             /* ******************************************* */
-
         });
     </script>
-
 }

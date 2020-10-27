@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ShoppingCart.Models.SupperModels
 {
@@ -20,9 +21,5 @@ namespace ShoppingCart.Models.SupperModels
         public int Sorting { get; set; }
 
         public bool HasSidebar { get; set; }
-
-        [Required]
-        [StringLength(int.MaxValue)]
-        public string Body { get; set; }
     }
 }
