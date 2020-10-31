@@ -14,6 +14,7 @@ namespace ShoppingCart.Models.Contexts
 
         public DbSet<Page> Pages { get; set; }
         public DbSet<Sidebar> Sidebars { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
     }
 }
