@@ -483,20 +483,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\Uploads\Products\15\smiley.jpg" />
-    <Content Include="Images\Uploads\Products\15\Thumbs\smiley.jpg" />
-    <Content Include="Images\Uploads\Products\31\Gallery\balaton31.jpg" />
-    <Content Include="Images\Uploads\Products\31\Gallery\bob.jpg" />
-    <Content Include="Images\Uploads\Products\31\Gallery\onto_the_bridge.jpg" />
-    <Content Include="Images\Uploads\Products\31\Gallery\smiley.jpg" />
-    <Content Include="Images\Uploads\Products\31\Gallery\through_the_woods.jpg" />
-    <Content Include="Images\Uploads\Products\31\Gallery\Thumbs\balaton31.jpg" />
-    <Content Include="Images\Uploads\Products\31\Gallery\Thumbs\bob.jpg" />
-    <Content Include="Images\Uploads\Products\31\Gallery\Thumbs\onto_the_bridge.jpg" />
-    <Content Include="Images\Uploads\Products\31\Gallery\Thumbs\smiley.jpg" />
-    <Content Include="Images\Uploads\Products\31\Gallery\Thumbs\through_the_woods.jpg" />
-    <Content Include="Images\Uploads\Products\31\sea.jpg" />
-    <Content Include="Images\Uploads\Products\31\Thumbs\sea.jpg" />
+    <Content Include="Images\Uploads\Products\33\Gallery\sea.jpg" />
+    <Content Include="Images\Uploads\Products\33\Gallery\th.jpg" />
+    <Content Include="Images\Uploads\Products\33\Gallery\through_the_woods.jpg" />
+    <Content Include="Images\Uploads\Products\33\Gallery\Thumbs\sea.jpg" />
+    <Content Include="Images\Uploads\Products\33\Gallery\Thumbs\th.jpg" />
+    <Content Include="Images\Uploads\Products\33\Gallery\Thumbs\through_the_woods.jpg" />
+    <Content Include="Images\Uploads\Products\33\smiley.jpg" />
+    <Content Include="Images\Uploads\Products\33\Thumbs\smiley.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -539,6 +533,7 @@
     <Content Include="Areas\Admin\Views\Shop\EditProduct.cshtml" />
     <Content Include="ConnectionStrings.config" />
     <Content Include="PrivateSettings.config" />
+    <Content Include=".gitignore" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -918,7 +913,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Images\Uploads\Products\15\Gallery\Thumbs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
