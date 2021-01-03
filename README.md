@@ -1,2 +1,2 @@
 # ShoppingCart
-ASP.NET CMS Shopping Cart
+Content Management System built in ASP.Net (C#)
