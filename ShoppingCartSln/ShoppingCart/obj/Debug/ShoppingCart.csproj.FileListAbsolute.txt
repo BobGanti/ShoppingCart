@@ -88,3 +88,9 @@ C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\De
 C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.Migrations.AddSidebars.resources
 C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.Migrations.PopulateSidebar.resources
 C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.Migrations.AddCategories.resources
+C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.Migrations.AddProducts.resources
+C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\obj\Debug\ShoppingCart.Migrations.RemoveRequiredFromImageName.resources
+C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\bin\PagedList.dll
+C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\bin\PagedList.Mvc.dll
+C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\bin\PagedList.xml
+C:\Users\Admin\Documents\GitHub\ShoppingCart\ShoppingCartSln\ShoppingCart\bin\PagedList.Mvc.xml

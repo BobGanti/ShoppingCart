@@ -10,11 +10,11 @@ namespace ShoppingCart.Areas.Admin.Controllers
 {
     public class PagesController : Controller
     {
-        private readonly CartDb db;
+        private readonly LocalDb db;
 
         public PagesController()
         {
-            db = new CartDb();
+            db = new LocalDb();
         }
 
         protected override void Dispose(bool disposing)

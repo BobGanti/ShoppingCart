@@ -7,14 +7,15 @@ using System.Web;
 
 namespace ShoppingCart.Models.Contexts
 {
-    public class CartDb : DbContext
+    public class LocalDb : DbContext
     {
-        public CartDb() : base("CartDb")
+        public LocalDb() : base("LocalDb")
         { }
 
         public DbSet<Page> Pages { get; set; }
         public DbSet<Sidebar> Sidebars { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
 
     }
 }
