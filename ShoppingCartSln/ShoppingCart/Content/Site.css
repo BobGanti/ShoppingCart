@@ -1,5 +1,32 @@
-﻿body {
-    margin-top: 0;
+﻿html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+div.navbar {
+    margin-bottom: 0;
+}
+#nt-wrapper {
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: lightslategrey;
+    padding-bottom: 75px;
+}
+#nt-upper-body {
+    margin: 0 20px;
+}
+#nt-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 75px;
+    width: 100%;
+    padding: 10px;
+    color: silver;
+    background: #221d1d;
 }
 
 table.sorting tr:not(.home) {

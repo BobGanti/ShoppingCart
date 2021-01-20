@@ -291,7 +291,7 @@ namespace ShoppingCart.Areas.Admin.Controllers
             if (Directory.Exists(mainImageFolder))
                 Directory.Delete(mainImageFolder, true);
 
-            //bool res = new FileDirectoryHandler().DeleteFolder(mainImageFolder);
+            //bool res = new FileDirectoryHandler().DeleteFolder(mainFileFolder);
 
             //if (res)
             //{
@@ -305,7 +305,7 @@ namespace ShoppingCart.Areas.Admin.Controllers
             return RedirectToAction("Products");
         }
 
-        //POST: Admin/Shop/SaveGalleryImages/id
+        //POST: Admin/Shop/SaveGalleryFiles/id
         [HttpPost]
         public void SaveGalleryImages(int id)
         {
@@ -317,20 +317,20 @@ namespace ShoppingCart.Areas.Admin.Controllers
                 {
                     var upImageRootDirectories = new DirectoryInfo(String.Format("{0}Images\\Uploads", Server.MapPath(@"\")));
                     string response = new FileDirectoryHandler(id, ItemFolderName, upImageRootDirectories, file)
-                                        .SaveGalleryImages();
+                                        .SaveGalleryFiles();
                 }
             }
         }
 
-        public void DeleteGalleryImage(int id, string imageName)
+        public void DeleteGalleryImages(int id, string imageName)
         {
             //string galleryPath = Request.MapPath("~/Images/Uploads/products/"+id.ToString()+"/Gallery/"+imageName);
             //string galleryThumbsPath = Request.MapPath("~/Images/Uploads/products/" + id.ToString() + "/Gallery/Thumbs/" + imageName);
             
-            string galleryFilesPath = Request.MapPath($"~/Images/Uploads/{ItemFolderName}/{id}/Gallery/{imageName}");
-            string galleryThumbsFilesPath = Request.MapPath($"~/Images/Uploads/{ItemFolderName}/{id}/Gallery/Thumbs/{imageName}");
+            string galleryImagesPath = Request.MapPath($"~/Images/Uploads/{ItemFolderName}/{id}/Gallery/{imageName}");
+            string galleryThumbsImagesPath = Request.MapPath($"~/Images/Uploads/{ItemFolderName}/{id}/Gallery/Thumbs/{imageName}");
 
-            new FileDirectoryHandler().DeleteGalleryFiles(galleryFilesPath, galleryThumbsFilesPath);
+            new FileDirectoryHandler().DeleteGalleryFiles(galleryImagesPath, galleryThumbsImagesPath);
         }
     }
 }

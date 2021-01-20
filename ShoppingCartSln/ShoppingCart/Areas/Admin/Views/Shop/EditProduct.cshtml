@@ -105,7 +105,7 @@
 {
     <div class="text-center" style="display:inline-block; margin-right:20px;">
         <img src="/Images/Uploads/Products/@Model.Id/Gallery/Thumbs/@image" /><br />
-        @Html.ActionLink("del", "DeleteGalleryImage", "Shop", new { id = Model.Id }, new { @class = "deleteimage text-danger", name = image })
+        @Html.ActionLink("del", "DeleteGalleryImages", "Shop", new { id = Model.Id }, new { @class = "deleteimage text-danger", name = image })
     </div>
 }
 <br />
@@ -124,17 +124,11 @@
             /*
                 *Delete gallery image
             */
-            //$("a.delete").click(function () {
-            //    if (!confirm("Do you want to delete this page?")) {
-            //        return false;
-            //    }
-            //});
-
             $("a.deleteimage").click(function (e) {
                 e.preventDefault();
 
                 var $this = $(this);
-                var url = "/admin/shop/DeleteGalleryImage";
+                var url = "/admin/shop/DeleteGalleryImages";
                 var imageName = $this.attr("name");
 
                 if (!confirm("Sure to delete this image, " + imageName+"?")) {

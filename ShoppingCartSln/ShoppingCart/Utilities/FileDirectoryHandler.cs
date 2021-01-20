@@ -11,7 +11,7 @@ namespace ShoppingCart.Utilities
     public class FileDirectoryHandler : Controller
     {
         private readonly int id;
-        private readonly string itemImageFolder, itemClassFolder, mainImageFolder, mainImageThumbFolder, galleryFolder, galleryThumbsFolder;
+        private readonly string productIdFolder, productClassFolder, mainFileFolder, mainFileThumbFolder, galleryFolder, galleryThumbsFolder;
         private readonly HttpPostedFileBase file;
         private readonly DirectoryInfo upFileRootDirectories;
 
@@ -25,27 +25,27 @@ namespace ShoppingCart.Utilities
             HttpPostedFileBase file)
         {
             this.id = id;
-            this.itemImageFolder = itemImageFolder;
+            this.productIdFolder = itemImageFolder;
             this.upFileRootDirectories = upFileRootDirectories;
             this.file = file;
 
-            itemClassFolder = Path.Combine(this.upFileRootDirectories.ToString(), this.itemImageFolder);
-            mainImageFolder = Path.Combine(this.upFileRootDirectories.ToString(), this.itemImageFolder + "\\" + this.id.ToString());
-            mainImageThumbFolder = Path.Combine(this.upFileRootDirectories.ToString(), this.itemImageFolder + "\\" + this.id.ToString() + "\\Thumbs");
-            galleryFolder = Path.Combine(this.upFileRootDirectories.ToString(), this.itemImageFolder + "\\" + this.id.ToString() + "\\Gallery");
-            galleryThumbsFolder = Path.Combine(this.upFileRootDirectories.ToString(), this.itemImageFolder + "\\" + this.id.ToString() + "\\Gallery\\Thumbs");
+            productClassFolder = Path.Combine(this.upFileRootDirectories.ToString(), this.productIdFolder);
+            mainFileFolder = Path.Combine(this.upFileRootDirectories.ToString(), this.productIdFolder + "\\" + this.id.ToString());
+            mainFileThumbFolder = Path.Combine(this.upFileRootDirectories.ToString(), this.productIdFolder + "\\" + this.id.ToString() + "\\Thumbs");
+            galleryFolder = Path.Combine(this.upFileRootDirectories.ToString(), this.productIdFolder + "\\" + this.id.ToString() + "\\Gallery");
+            galleryThumbsFolder = Path.Combine(this.upFileRootDirectories.ToString(), this.productIdFolder + "\\" + this.id.ToString() + "\\Gallery\\Thumbs");
         }
 
         public string SetFileDir()
         {
-            if (!Directory.Exists(itemClassFolder))
-                Directory.CreateDirectory(itemClassFolder);
+            if (!Directory.Exists(productClassFolder))
+                Directory.CreateDirectory(productClassFolder);
 
-            if (!Directory.Exists(mainImageFolder))
-                Directory.CreateDirectory(mainImageFolder);
+            if (!Directory.Exists(mainFileFolder))
+                Directory.CreateDirectory(mainFileFolder);
 
-            if (!Directory.Exists(mainImageThumbFolder))
-                Directory.CreateDirectory(mainImageThumbFolder);
+            if (!Directory.Exists(mainFileThumbFolder))
+                Directory.CreateDirectory(mainFileThumbFolder);
 
             if (!Directory.Exists(galleryFolder))
                 Directory.CreateDirectory(galleryFolder);
@@ -56,7 +56,7 @@ namespace ShoppingCart.Utilities
             if (!VerifyFileExtension(this.file))
                 return "Wrong file type";
 
-            SaveFilesToDir(mainImageFolder, mainImageThumbFolder);
+            SaveFilesToDir(mainFileFolder, mainFileThumbFolder);
 
             return "OK";
         }
@@ -67,19 +67,19 @@ namespace ShoppingCart.Utilities
                 return "Wrong file type";
 
             // Delete existing image files
-            DirectoryInfo imgFolder = new DirectoryInfo(mainImageFolder);
+            DirectoryInfo imgFolder = new DirectoryInfo(mainFileFolder);
             foreach (FileInfo image_file in imgFolder.GetFiles())
             {
                 image_file.Delete();
             }
 
-            DirectoryInfo imgThumbFolder = new DirectoryInfo(mainImageThumbFolder);
+            DirectoryInfo imgThumbFolder = new DirectoryInfo(mainFileThumbFolder);
             foreach (FileInfo image_file in imgThumbFolder.GetFiles())
             {
                 image_file.Delete();
             }
 
-            return SaveFilesToDir(mainImageFolder, mainImageThumbFolder);
+            return SaveFilesToDir(mainFileFolder, mainFileThumbFolder);
         }
 
         public bool DeleteFolder(string mainImageFolder)
@@ -98,7 +98,7 @@ namespace ShoppingCart.Utilities
             }
         }
 
-        public string SaveGalleryImages()
+        public string SaveGalleryFiles()
         {
             if (!VerifyFileExtension(this.file))
                 return "Wrong file type";
