@@ -133,6 +133,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Clients\ClientsAreaRegistration.cs" />
+    <Compile Include="Areas\Clients\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Clients\Controllers\PagesController.cs" />
+    <Compile Include="Areas\Clients\Controllers\ShopController.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
@@ -547,6 +551,19 @@
     <Content Include="ConnectionStrings.config" />
     <Content Include="PrivateSettings.config" />
     <Content Include=".gitignore" />
+    <Content Include="Areas\Clients\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Clients\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Clients\Views\Pages\AddPage.cshtml" />
+    <Content Include="Areas\Clients\Views\Pages\EditPage.cshtml" />
+    <Content Include="Areas\Clients\Views\Pages\EditSidebar.cshtml" />
+    <Content Include="Areas\Clients\Views\Pages\Index.cshtml" />
+    <Content Include="Areas\Clients\Views\Pages\PageDetails.cshtml" />
+    <Content Include="Areas\Clients\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Clients\Views\Shop\AddProduct.cshtml" />
+    <Content Include="Areas\Clients\Views\Shop\Categories.cshtml" />
+    <Content Include="Areas\Clients\Views\Shop\EditProduct.cshtml" />
+    <Content Include="Areas\Clients\Views\Shop\Products.cshtml" />
+    <Content Include="Areas\Clients\Views\web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -939,6 +956,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Clients\Data\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
