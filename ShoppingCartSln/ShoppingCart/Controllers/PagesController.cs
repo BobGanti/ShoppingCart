@@ -13,11 +13,11 @@ namespace ShoppingCart.Controllers
 {
     public class PagesController : Controller
     {
-        private readonly LocalDb db;
+        private readonly NtiAppsContext db;
 
         public PagesController()
         {
-            db = new LocalDb();
+            db = new NtiAppsContext();
         }
 
         protected override void Dispose(bool disposing)

@@ -14,14 +14,15 @@ using System.Web.Mvc;
 
 namespace ShoppingCart.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class ShopController : Controller
     {
-        private readonly LocalDb db;
+        private readonly NtiAppsContext db;
         private readonly string ItemFolderName = "Products";
 
         public ShopController()
         {
-            db = new LocalDb();
+            db = new NtiAppsContext();
         }
 
         protected override void Dispose(bool disposing)
@@ -40,18 +41,17 @@ namespace ShoppingCart.Areas.Admin.Controllers
             return View(categories);
         }
 
-        // POST: Admin/Shop/AddCategory
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public string AddCategory(string newcatName)
+        // POST: Admin/Shop/AddNewCategory
+       [HttpPost]
+        public string AddNewCategory(string catName)
         {
-            if (db.Categories.Any(c => c.Name.Equals(newcatName)))
+            if (db.Categories.Any(c => c.Name.Equals(catName)))
                 return "titletaken";
 
             Category category = new Category()
             {
-                Name = newcatName,
-                Slink = newcatName.Replace(" ", "-").ToLower(),
+                Name = catName,
+                Slink = catName.Replace(" ", "-").ToLower(),
                 Sorting = 100
             };
 
@@ -78,18 +78,17 @@ namespace ShoppingCart.Areas.Admin.Controllers
 
         // POST: admin/shop/RenameCategory/
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public string RenameCategory(string newCatName, int id)
+        public string RenameCategory(string catName, int id)
         {
-            if (db.Categories.Any(c => c.Name == newCatName))
+            if (db.Categories.Any(c => c.Name == catName))
                 return "titletaken";
 
             var category = db.Categories.SingleOrDefault(c => c.Id == id);
             if (category == null)
                 return "The Category does not exist!";
 
-            category.Name = newCatName;
-            category.Slink = newCatName.Replace(" ", "-").ToLower();
+            category.Name = catName;
+            category.Slink = catName.Replace(" ", "-").ToLower();
 
             db.SaveChanges();
 

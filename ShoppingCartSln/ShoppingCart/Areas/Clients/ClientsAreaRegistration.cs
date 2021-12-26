@@ -8,15 +8,15 @@ namespace ShoppingCart.Areas.Admin
         {
             get 
             {
-                return "Admin";
+                return "Org";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Clients",
-                "Clients/{controller}/{action}/{id}",
+                "Org",
+                "Org/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ShoppingCart.Models.ViewModels.Shop.UserOrdersVM>
+
+@{
+    ViewBag.Title = "Orders";
+    ViewBag.CurrencyIcon = "€";
+}
+
+<h2>Orders</h2>
+
+@if (!Model.Any())
+{
+    <h3 class="text-center text-danger">You have no Orders</h3>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>
+                Order Number
+            </th>
+            <th>
+                Order Details
+            </th>
+            <th>
+                Order Date
+            </th>
+            <th>
+                Order Amount
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderId)
+                </td>
+                <td>
+                    @foreach (var item2 in item.ProductsAndQty)
+                    {
+                        @item2.Value @:x @item2.Key  <br />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @ViewBag.CurrencyIcon@Html.DisplayFor(modelItem => item.OrderAmount)
+                </td>
+               
+            </tr>
+        }
+
+    </table>
+}
+

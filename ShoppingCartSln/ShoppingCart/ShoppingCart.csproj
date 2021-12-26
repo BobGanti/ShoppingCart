@@ -133,14 +133,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModels\AdminOrdersVM.cs" />
     <Compile Include="Areas\Clients\ClientsAreaRegistration.cs" />
-    <Compile Include="Areas\Clients\Controllers\DashboardController.cs" />
-    <Compile Include="Areas\Clients\Controllers\PagesController.cs" />
-    <Compile Include="Areas\Clients\Controllers\ShopController.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ShopController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
@@ -179,29 +178,84 @@
     <Compile Include="Migrations\202012030049044_RemoveRequiredFromImageName.designer.cs">
       <DependentUpon>202012030049044_RemoveRequiredFromImageName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102201606057_AddUsers.cs" />
+    <Compile Include="Migrations\202102201606057_AddUsers.designer.cs">
+      <DependentUpon>202102201606057_AddUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102201619344_AddPhoneToUsers.cs" />
+    <Compile Include="Migrations\202102201619344_AddPhoneToUsers.designer.cs">
+      <DependentUpon>202102201619344_AddPhoneToUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102201638163_AddARolesTable.cs" />
+    <Compile Include="Migrations\202102201638163_AddARolesTable.designer.cs">
+      <DependentUpon>202102201638163_AddARolesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102201647191_SeedUsers.cs" />
+    <Compile Include="Migrations\202102201647191_SeedUsers.designer.cs">
+      <DependentUpon>202102201647191_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102201735340_AddUserRolesTable.cs" />
+    <Compile Include="Migrations\202102201735340_AddUserRolesTable.designer.cs">
+      <DependentUpon>202102201735340_AddUserRolesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102201754277_AddAnnotationsToUseRoles.cs" />
+    <Compile Include="Migrations\202102201754277_AddAnnotationsToUseRoles.designer.cs">
+      <DependentUpon>202102201754277_AddAnnotationsToUseRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102201932189_SeddAdmin.cs" />
+    <Compile Include="Migrations\202102201932189_SeddAdmin.designer.cs">
+      <DependentUpon>202102201932189_SeddAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102201944083_SeedAminUserRoles.cs" />
+    <Compile Include="Migrations\202102201944083_SeedAminUserRoles.designer.cs">
+      <DependentUpon>202102201944083_SeedAminUserRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102210248020_AddOrders.cs" />
+    <Compile Include="Migrations\202102210248020_AddOrders.designer.cs">
+      <DependentUpon>202102210248020_AddOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102210255211_AddOrderDetailss.cs" />
+    <Compile Include="Migrations\202102210255211_AddOrderDetailss.designer.cs">
+      <DependentUpon>202102210255211_AddOrderDetailss.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Contexts\LocalDb.cs" />
+    <Compile Include="Models\Contexts\INtiDataAccess.cs" />
+    <Compile Include="Models\Contexts\NtiAppsContext.cs" />
     <Compile Include="Models\DataModels\Category.cs" />
+    <Compile Include="Models\DataModels\Order.cs" />
     <Compile Include="Models\DataModels\Page.cs" />
     <Compile Include="Models\DataModels\Product.cs" />
+    <Compile Include="Models\DataModels\Role.cs" />
     <Compile Include="Models\DataModels\Sidebar.cs" />
+    <Compile Include="Models\DataModels\User.cs" />
+    <Compile Include="Models\DataModels\UserRole.cs" />
     <Compile Include="Models\SupperModels\NTCategory.cs" />
+    <Compile Include="Models\SupperModels\NTOrder.cs" />
+    <Compile Include="Models\SupperModels\NTOrderDetail.cs" />
     <Compile Include="Models\SupperModels\NTPage.cs" />
     <Compile Include="Models\SupperModels\NTProduct.cs" />
     <Compile Include="Models\SupperModels\NTSidebar.cs" />
+    <Compile Include="Models\SupperModels\NTUser.cs" />
+    <Compile Include="Models\ViewModels\Account\LoginUserVM.cs" />
+    <Compile Include="Models\ViewModels\Account\UserNavPartialVM.cs" />
+    <Compile Include="Models\ViewModels\Account\UserProfileVM.cs" />
+    <Compile Include="Models\ViewModels\Account\UserVM.cs" />
     <Compile Include="Models\ViewModels\Cart\CartVM.cs" />
+    <Compile Include="Models\DataModels\OrderDetail.cs" />
     <Compile Include="Models\ViewModels\Pages\PageVM.cs" />
     <Compile Include="Models\ViewModels\Pages\SidebarVM.cs" />
     <Compile Include="Models\ViewModels\Shop\CategoryVM.cs" />
+    <Compile Include="Models\ViewModels\Shop\OrderVM.cs" />
+    <Compile Include="Models\ViewModels\Shop\UserOrdersVM.cs" />
     <Compile Include="Models\ViewModels\Shop\ProductVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\CheckOrFormat.cs" />
     <Compile Include="Utilities\FileDirectoryHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ShoppingCartDb.mdf" />
-    <Content Include="App_Data\ShoppingCartDb_log.ldf">
-      <DependentUpon>ShoppingCartDb.mdf</DependentUpon>
+    <Content Include="App_Data\LocalDb.mdf" />
+    <Content Include="App_Data\LocalDb_log.ldf">
+      <DependentUpon>LocalDb.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -500,14 +554,155 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Uploads\Products\13\Gallery\mand1.jpg" />
+    <Content Include="Images\Uploads\Products\13\Gallery\mand2.jpg" />
+    <Content Include="Images\Uploads\Products\13\Gallery\mand3.jpg" />
+    <Content Include="Images\Uploads\Products\13\Gallery\mand4.jpg" />
+    <Content Include="Images\Uploads\Products\13\Gallery\Thumbs\mand1.jpg" />
+    <Content Include="Images\Uploads\Products\13\Gallery\Thumbs\mand2.jpg" />
+    <Content Include="Images\Uploads\Products\13\Gallery\Thumbs\mand3.jpg" />
+    <Content Include="Images\Uploads\Products\13\Gallery\Thumbs\mand4.jpg" />
+    <Content Include="Images\Uploads\Products\13\mand1.jpg" />
+    <Content Include="Images\Uploads\Products\13\Thumbs\mand1.jpg" />
+    <Content Include="Images\Uploads\Products\17\Gallery\orange1.jpg" />
+    <Content Include="Images\Uploads\Products\17\Gallery\orange2.jpg" />
+    <Content Include="Images\Uploads\Products\17\Gallery\orange3.jpg" />
+    <Content Include="Images\Uploads\Products\17\Gallery\orange4.jpg" />
+    <Content Include="Images\Uploads\Products\17\Gallery\Thumbs\orange1.jpg" />
+    <Content Include="Images\Uploads\Products\17\Gallery\Thumbs\orange2.jpg" />
+    <Content Include="Images\Uploads\Products\17\Gallery\Thumbs\orange3.jpg" />
+    <Content Include="Images\Uploads\Products\17\Gallery\Thumbs\orange4.jpg" />
+    <Content Include="Images\Uploads\Products\17\orange1.jpg" />
+    <Content Include="Images\Uploads\Products\17\Thumbs\orange1.jpg" />
+    <Content Include="Images\Uploads\Products\21\apple1.jpg" />
+    <Content Include="Images\Uploads\Products\21\Thumbs\apple1.jpg" />
+    <Content Include="Images\Uploads\Products\22\blue1.jpg" />
+    <Content Include="Images\Uploads\Products\22\Gallery\blue1.jpg" />
+    <Content Include="Images\Uploads\Products\22\Gallery\blue2.jpg" />
+    <Content Include="Images\Uploads\Products\22\Gallery\blue3.png" />
+    <Content Include="Images\Uploads\Products\22\Gallery\blue4.png" />
+    <Content Include="Images\Uploads\Products\22\Gallery\Thumbs\blue1.jpg" />
+    <Content Include="Images\Uploads\Products\22\Gallery\Thumbs\blue2.jpg" />
+    <Content Include="Images\Uploads\Products\22\Gallery\Thumbs\blue3.png" />
+    <Content Include="Images\Uploads\Products\22\Gallery\Thumbs\blue4.png" />
+    <Content Include="Images\Uploads\Products\22\Thumbs\blue1.jpg" />
+    <Content Include="Images\Uploads\Products\23\Gallery\green1.png" />
+    <Content Include="Images\Uploads\Products\23\Gallery\green2.png" />
+    <Content Include="Images\Uploads\Products\23\Gallery\green3.png" />
+    <Content Include="Images\Uploads\Products\23\Gallery\green4.png" />
+    <Content Include="Images\Uploads\Products\23\Gallery\Thumbs\green1.png" />
+    <Content Include="Images\Uploads\Products\23\Gallery\Thumbs\green2.png" />
+    <Content Include="Images\Uploads\Products\23\Gallery\Thumbs\green3.png" />
+    <Content Include="Images\Uploads\Products\23\Gallery\Thumbs\green4.png" />
+    <Content Include="Images\Uploads\Products\23\green1.png" />
+    <Content Include="Images\Uploads\Products\23\Thumbs\green1.png" />
+    <Content Include="Images\Uploads\Products\24\Gallery\pink1.png" />
+    <Content Include="Images\Uploads\Products\24\Gallery\pink2.png" />
+    <Content Include="Images\Uploads\Products\24\Gallery\pink3.png" />
+    <Content Include="Images\Uploads\Products\24\Gallery\pink4.png" />
+    <Content Include="Images\Uploads\Products\24\Gallery\Thumbs\pink1.png" />
+    <Content Include="Images\Uploads\Products\24\Gallery\Thumbs\pink2.png" />
+    <Content Include="Images\Uploads\Products\24\Gallery\Thumbs\pink3.png" />
+    <Content Include="Images\Uploads\Products\24\Gallery\Thumbs\pink4.png" />
+    <Content Include="Images\Uploads\Products\24\pink1.png" />
+    <Content Include="Images\Uploads\Products\24\Thumbs\pink1.png" />
+    <Content Include="Images\Uploads\Products\25\Gallery\red1.jpg" />
+    <Content Include="Images\Uploads\Products\25\Gallery\red2.png" />
+    <Content Include="Images\Uploads\Products\25\Gallery\red3.png" />
+    <Content Include="Images\Uploads\Products\25\Gallery\red4.png" />
+    <Content Include="Images\Uploads\Products\25\Gallery\Thumbs\red1.jpg" />
+    <Content Include="Images\Uploads\Products\25\Gallery\Thumbs\red2.png" />
+    <Content Include="Images\Uploads\Products\25\Gallery\Thumbs\red3.png" />
+    <Content Include="Images\Uploads\Products\25\Gallery\Thumbs\red4.png" />
+    <Content Include="Images\Uploads\Products\25\red1.jpg" />
+    <Content Include="Images\Uploads\Products\25\Thumbs\red1.jpg" />
+    <Content Include="Images\Uploads\Products\26\Gallery\Thumbs\yellow1.png" />
+    <Content Include="Images\Uploads\Products\26\Gallery\Thumbs\yellow2.jpg" />
+    <Content Include="Images\Uploads\Products\26\Gallery\Thumbs\yellow3.jpg" />
+    <Content Include="Images\Uploads\Products\26\Gallery\Thumbs\yellow4.jpg" />
+    <Content Include="Images\Uploads\Products\26\Gallery\yellow1.png" />
+    <Content Include="Images\Uploads\Products\26\Gallery\yellow2.jpg" />
+    <Content Include="Images\Uploads\Products\26\Gallery\yellow3.jpg" />
+    <Content Include="Images\Uploads\Products\26\Gallery\yellow4.jpg" />
+    <Content Include="Images\Uploads\Products\26\Thumbs\yellow1.png" />
+    <Content Include="Images\Uploads\Products\26\yellow1.png" />
+    <Content Include="Images\Uploads\Products\27\blue1.jpg" />
+    <Content Include="Images\Uploads\Products\27\Gallery\blue1.jpg" />
+    <Content Include="Images\Uploads\Products\27\Gallery\blue2.jpg" />
+    <Content Include="Images\Uploads\Products\27\Gallery\blue3.png" />
+    <Content Include="Images\Uploads\Products\27\Gallery\blue4.png" />
+    <Content Include="Images\Uploads\Products\27\Gallery\Thumbs\blue1.jpg" />
+    <Content Include="Images\Uploads\Products\27\Gallery\Thumbs\blue2.jpg" />
+    <Content Include="Images\Uploads\Products\27\Gallery\Thumbs\blue3.png" />
+    <Content Include="Images\Uploads\Products\27\Gallery\Thumbs\blue4.png" />
+    <Content Include="Images\Uploads\Products\27\Thumbs\blue1.jpg" />
+    <Content Include="Images\Uploads\Products\28\Gallery\green1.png" />
+    <Content Include="Images\Uploads\Products\28\Gallery\green2.png" />
+    <Content Include="Images\Uploads\Products\28\Gallery\green3.png" />
+    <Content Include="Images\Uploads\Products\28\Gallery\green4.png" />
+    <Content Include="Images\Uploads\Products\28\Gallery\Thumbs\green1.png" />
+    <Content Include="Images\Uploads\Products\28\Gallery\Thumbs\green2.png" />
+    <Content Include="Images\Uploads\Products\28\Gallery\Thumbs\green3.png" />
+    <Content Include="Images\Uploads\Products\28\Gallery\Thumbs\green4.png" />
+    <Content Include="Images\Uploads\Products\28\green1.png" />
+    <Content Include="Images\Uploads\Products\28\Thumbs\green1.png" />
+    <Content Include="Images\Uploads\Products\29\Gallery\pink1.png" />
+    <Content Include="Images\Uploads\Products\29\Gallery\pink2.png" />
+    <Content Include="Images\Uploads\Products\29\Gallery\pink3.png" />
+    <Content Include="Images\Uploads\Products\29\Gallery\pink4.png" />
+    <Content Include="Images\Uploads\Products\29\Gallery\Thumbs\pink1.png" />
+    <Content Include="Images\Uploads\Products\29\Gallery\Thumbs\pink2.png" />
+    <Content Include="Images\Uploads\Products\29\Gallery\Thumbs\pink3.png" />
+    <Content Include="Images\Uploads\Products\29\Gallery\Thumbs\pink4.png" />
+    <Content Include="Images\Uploads\Products\29\pink1.png" />
+    <Content Include="Images\Uploads\Products\29\Thumbs\pink1.png" />
+    <Content Include="Images\Uploads\Products\30\Gallery\red1.jpg" />
+    <Content Include="Images\Uploads\Products\30\Gallery\red2.png" />
+    <Content Include="Images\Uploads\Products\30\Gallery\red3.png" />
+    <Content Include="Images\Uploads\Products\30\Gallery\red4.png" />
+    <Content Include="Images\Uploads\Products\30\Gallery\Thumbs\red1.jpg" />
+    <Content Include="Images\Uploads\Products\30\Gallery\Thumbs\red2.png" />
+    <Content Include="Images\Uploads\Products\30\Gallery\Thumbs\red3.png" />
+    <Content Include="Images\Uploads\Products\30\Gallery\Thumbs\red4.png" />
+    <Content Include="Images\Uploads\Products\30\red1.jpg" />
+    <Content Include="Images\Uploads\Products\30\Thumbs\red1.jpg" />
+    <Content Include="Images\Uploads\Products\31\Gallery\Thumbs\yellow1.png" />
+    <Content Include="Images\Uploads\Products\31\Gallery\Thumbs\yellow2.jpg" />
+    <Content Include="Images\Uploads\Products\31\Gallery\Thumbs\yellow3.jpg" />
+    <Content Include="Images\Uploads\Products\31\Gallery\Thumbs\yellow4.jpg" />
+    <Content Include="Images\Uploads\Products\31\Gallery\yellow1.png" />
+    <Content Include="Images\Uploads\Products\31\Gallery\yellow2.jpg" />
+    <Content Include="Images\Uploads\Products\31\Gallery\yellow3.jpg" />
+    <Content Include="Images\Uploads\Products\31\Gallery\yellow4.jpg" />
+    <Content Include="Images\Uploads\Products\31\Thumbs\yellow1.png" />
+    <Content Include="Images\Uploads\Products\31\yellow1.png" />
     <Content Include="Images\Uploads\Products\33\Gallery\sea.jpg" />
-    <Content Include="Images\Uploads\Products\33\Gallery\th.jpg" />
     <Content Include="Images\Uploads\Products\33\Gallery\through_the_woods.jpg" />
     <Content Include="Images\Uploads\Products\33\Gallery\Thumbs\sea.jpg" />
-    <Content Include="Images\Uploads\Products\33\Gallery\Thumbs\th.jpg" />
     <Content Include="Images\Uploads\Products\33\Gallery\Thumbs\through_the_woods.jpg" />
     <Content Include="Images\Uploads\Products\33\smiley.jpg" />
     <Content Include="Images\Uploads\Products\33\Thumbs\smiley.jpg" />
+    <Content Include="Images\Uploads\Products\5\Gallery\grapefruit1.jpg" />
+    <Content Include="Images\Uploads\Products\5\Gallery\grapefruit2.jpg" />
+    <Content Include="Images\Uploads\Products\5\Gallery\grapefruit3.jpg" />
+    <Content Include="Images\Uploads\Products\5\Gallery\grapefruit4.jpg" />
+    <Content Include="Images\Uploads\Products\5\Gallery\Thumbs\grapefruit1.jpg" />
+    <Content Include="Images\Uploads\Products\5\Gallery\Thumbs\grapefruit2.jpg" />
+    <Content Include="Images\Uploads\Products\5\Gallery\Thumbs\grapefruit3.jpg" />
+    <Content Include="Images\Uploads\Products\5\Gallery\Thumbs\grapefruit4.jpg" />
+    <Content Include="Images\Uploads\Products\5\grapefruit1.jpg" />
+    <Content Include="Images\Uploads\Products\5\Thumbs\grapefruit1.jpg" />
+    <Content Include="Images\Uploads\Products\9\Gallery\grapes1.jpg" />
+    <Content Include="Images\Uploads\Products\9\Gallery\grapes2.jpg" />
+    <Content Include="Images\Uploads\Products\9\Gallery\grapes3.jpg" />
+    <Content Include="Images\Uploads\Products\9\Gallery\grapes4.jpg" />
+    <Content Include="Images\Uploads\Products\9\Gallery\Thumbs\grapes1.jpg" />
+    <Content Include="Images\Uploads\Products\9\Gallery\Thumbs\grapes2.jpg" />
+    <Content Include="Images\Uploads\Products\9\Gallery\Thumbs\grapes3.jpg" />
+    <Content Include="Images\Uploads\Products\9\Gallery\Thumbs\grapes4.jpg" />
+    <Content Include="Images\Uploads\Products\9\grapes1.jpg" />
+    <Content Include="Images\Uploads\Products\9\Thumbs\grapes1.jpg" />
+    <Content Include="PrivateSettings.config" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -544,15 +739,11 @@
     <Content Include="fileman\lang\sk.json" />
     <Content Include="fileman\lang\tr.json" />
     <Content Include="fileman\web.config" />
-    <Content Include="Areas\Admin\Views\Shop\Categories.cshtml" />
     <Content Include="Areas\Admin\Views\Shop\AddProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Shop\Products.cshtml" />
     <Content Include="Areas\Admin\Views\Shop\EditProduct.cshtml" />
-    <Content Include="ConnectionStrings.config" />
-    <Content Include="PrivateSettings.config" />
     <Content Include=".gitignore" />
     <Content Include="Areas\Clients\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Clients\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Clients\Views\Pages\AddPage.cshtml" />
     <Content Include="Areas\Clients\Views\Pages\EditPage.cshtml" />
     <Content Include="Areas\Clients\Views\Pages\EditSidebar.cshtml" />
@@ -564,6 +755,10 @@
     <Content Include="Areas\Clients\Views\Shop\EditProduct.cshtml" />
     <Content Include="Areas\Clients\Views\Shop\Products.cshtml" />
     <Content Include="Areas\Clients\Views\web.config" />
+    <Content Include="ConnectionStrings.config" />
+    <Content Include="Areas\Admin\Views\Shop\Categories.cshtml" />
+    <Content Include="Views\Account\Orders.cshtml" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -953,10 +1148,18 @@
     <Content Include="Views\Shop\Category.cshtml" />
     <Content Include="Views\Shop\ProductDetails.cshtml" />
     <Content Include="Views\Cart\CartPartial.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\AddToCartPartial.cshtml" />
+    <Content Include="Views\Account\CreateAccount.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\UserNavPartial.cshtml" />
+    <Content Include="Views\Account\UserProfile.cshtml" />
+    <Content Include="Views\Cart\PaypalPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Clients\Controllers\" />
     <Folder Include="Areas\Clients\Data\" />
+    <Folder Include="Images\Uploads\Products\21\Gallery\Thumbs\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
@@ -996,6 +1199,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012030049044_RemoveRequiredFromImageName.resx">
       <DependentUpon>202012030049044_RemoveRequiredFromImageName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102201606057_AddUsers.resx">
+      <DependentUpon>202102201606057_AddUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102201619344_AddPhoneToUsers.resx">
+      <DependentUpon>202102201619344_AddPhoneToUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102201638163_AddARolesTable.resx">
+      <DependentUpon>202102201638163_AddARolesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102201647191_SeedUsers.resx">
+      <DependentUpon>202102201647191_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102201735340_AddUserRolesTable.resx">
+      <DependentUpon>202102201735340_AddUserRolesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102201754277_AddAnnotationsToUseRoles.resx">
+      <DependentUpon>202102201754277_AddAnnotationsToUseRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102201932189_SeddAdmin.resx">
+      <DependentUpon>202102201932189_SeddAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102201944083_SeedAminUserRoles.resx">
+      <DependentUpon>202102201944083_SeedAminUserRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102210248020_AddOrders.resx">
+      <DependentUpon>202102210248020_AddOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102210255211_AddOrderDetailss.resx">
+      <DependentUpon>202102210255211_AddOrderDetailss.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
